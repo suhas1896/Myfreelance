@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="wrapper">
+    <div class="logo">
+        <img src="./assets/images/cusbuzz.png">
+    </div>
+    <div class="text-center mt-4 name">
+        Cusbuzz
+    </div>
+    <span *ngIf="password.invalid && password.touched && name.touched" style="color: red;">Enter a valid Password</span>
+    <span *ngIf="error_message" style="color: red;">Enter a valid user name Password</span>
+    <form #loginForm="ngForm" (ngSubmit)= userLogin(loginForm.value) class="p-3">
+        <div class="form-field d-flex align-items-center">
+            <input type="text" required #name="ngModel" placeholder="Enter email " name="name" ngModel>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input type="password" required #password="ngModel" minlength="5" placeholder="Enter Password" name="password" ngModel>
+        </div>
+        <button [disabled]="loginForm.invalid" class="btn mt-3">Login</button>
+    </form>
+    <div class="text-center fs-6">
+        <a href="#">Forget password?</a>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
