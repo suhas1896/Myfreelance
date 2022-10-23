@@ -11,16 +11,38 @@
     <span *ngIf="error_message" style="color: red;">Enter a valid user name Password</span>
     <form #loginForm="ngForm" (ngSubmit)= userLogin(loginForm.value) class="p-3">
         <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
             <input type="text" required #name="ngModel" placeholder="Enter email " name="name" ngModel>
         </div>
         <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
             <input type="password" required #password="ngModel" minlength="5" placeholder="Enter Password" name="password" ngModel>
         </div>
         <button [disabled]="loginForm.invalid" class="btn mt-3">Login</button>
     </form>
     <div class="text-center fs-6">
-        <a href="#">Forget password?</a>
+        <a href="#">Forget password?</a> or <a routerLink="/signup">Sign up</a>
     </div>
+    
 </div>
 
 <router-outlet></router-outlet>
+
+
+<!-- <div>
+    <form #loginForm="ngForm" (ngSubmit)=userLogin(loginForm.value) class="p-3">
+        <div class="form-field d-flex align-items-center">
+            <input type="text" required #name="ngModel" placeholder="First Name" name="name" ngModel>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input type="text" required #name="ngModel" placeholder="Last Name" name="name" ngModel>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input type="text" required #name="ngModel" placeholder="Email Name" name="name" ngModel>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input type="text" required #name="ngModel" placeholder="Password" name="name" ngModel>
+        </div>
+        <button [disabled]="loginForm.invalid" class="btn mt-3">Login</button>
+    </form>
+</div> -->

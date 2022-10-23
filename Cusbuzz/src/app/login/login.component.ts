@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
   userLogin(item:any){
 
-    if (item.name == "Suhas" && item.password == "12345") {
+    if (item.name == "suhas" && item.password == "12345") {
       this.error_message = false
       this.router.navigate(["/home"])
 
